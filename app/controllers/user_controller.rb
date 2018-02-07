@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   def home
-    @users = user.all
+
   end
   def login
 
@@ -8,4 +8,8 @@ class UserController < ApplicationController
   def signup
 
   end
+  def data
+
+    end
+
 end

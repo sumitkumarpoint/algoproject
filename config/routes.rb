@@ -8,6 +8,7 @@ Rails.application.routes.draw do
  root 'welcome#home'
  resources :article
   get 'welcome/home'
+  get 'user/data'
 
   get 'welcome/about'
 

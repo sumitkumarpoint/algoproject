@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=divice-width , initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+</head>
+<body>
+<style>
+  p{
+    font-family: Algerian;
+  }
+</style>
+<div align="center" class="jumbotron text-center">
+  <div style="font-family: 'Cooper Black'; font-size: 3em;">User's Detail</div>
+  <p>First Name is: <span id="fn"></span> </p>
+  <p>Last Name is: <span id="ln"></span> </p>
+  <p>Email is: <span id="ema"></span> </p>
+  <p>Password is: <span id="pas"></span> </p>
+</div>
+<script>
+
+   var str1= window.location.search;
+   var str =str1.replace("%40",'@');
+   var res = str.split("=");
+  var fn=  res['1'];
+  var fname=fn.split("&");
+   document.getElementById("fn").innerHTML =fname['0'];
+
+
+   var ln=  res['2'];
+   var l_name=ln.split("&");
+   document.getElementById("ln").innerHTML =l_name['0'];
+
+   var e=  res['3'];
+   var email=e.split("&");
+   document.getElementById("ema").innerHTML =email['0'];
+
+   var p=  res['4'];
+   var pass=p.split("&");
+   document.getElementById("pas").innerHTML =pass['0'];
+
+
+
+
+
+</script>
+</body>
+</html>

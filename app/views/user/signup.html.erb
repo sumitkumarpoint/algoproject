@@ -3,34 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=divice-width , initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <%= stylesheet_link_tag "style1.css" %>
+  <%= javascript_include_tag "script1.js" %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
 </head>
 <body>
-<style>
-  span{
-    font-family: "Arial Black";
-    font-size: 1em;
-    margin-right:0.5em;
-  }
-    input{
-      border-radius: 5px;
-      outline: none;
-      font-family: "Arial Black";
-      margin-top: 0.3em;
-      text-align: center;
-      color:solid gray;
-    }
-</style>
+
 <div  style="margin: 50px" align="center" class=" jumbotron">
   <table rows="9" cols="2 " cellspacing="10" >
-    <form>
+    <form method="get" action="data" onsubmit="return f();">
     <tr><th style="font-family: cooper;font-size: 3em;" class="text-center" colspan="2">Sign UP</th></tr>
     <tr>
 
       <td colspan="2">
-        <input type="text" placeholder="First Name" class="in-field"/><br>
+        <input type="text"  id="fn" placeholder="First Name" name="fn" class="in-field"/><br>
       </td>
     </tr>
 
@@ -38,7 +25,7 @@
       <tr>
 
         <td colspan="2">
-          <input type="text" placeholder="Last Name" class="in-field"/><br>
+          <input type="text"  id="ln" placeholder="Last Name" name="ln" class="in-field"/><br>
         </td>
       </tr>
 
@@ -46,14 +33,14 @@
       <tr>
 
         <td colspan="2">
-          <input type="text" placeholder="Email" class="in-field"/><br>
+          <input type="text"  id="email" placeholder="Email" name="email" class="in-field"/><br>
         </td>
       </tr>
 
       <tr>
 
         <td colspan="2">
-          <input type="text" placeholder="Password" class="in-field"/><br>
+          <input type="password"  id="pass" placeholder="Password"  name="pass" class="in-field"/><br>
         </td>
       </tr>
 
@@ -61,7 +48,7 @@
       <tr>
 
         <td colspan="2">
-          <input type="text" placeholder="Confirm Password" class="in-field"/><br>
+          <input type="password"  id="c_pass" placeholder="Confirm Password" class="in-field"/><br>
         </td>
       </tr>
 
@@ -69,7 +56,7 @@
       <tr>
 
         <td colspan="2" style="text-align: center">
-          <input type="submit" value="Sign Up" class=""/><br>
+          <input type="submit" value="Sign Up" onclick="f();" class=""/><br>
         </td>
       </tr>
 <tr>
