@@ -1,3 +1,25 @@
-p{
-    color:red;
+li{
+    list-style: none;
+    float:right;
+    display:inline-block;
+    margin:1em;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    display: block;
+
+}
+li:hover{
+    text-decoration:none ;
+    color:#EFEFEF !important;
+    background-color: #730E15;
+}
+
+
+
+.article{
+    background: #999999;
+
+}
+div{
 }

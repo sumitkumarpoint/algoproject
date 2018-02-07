@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  resources :forgots
-
   resources :logins
   get 'user/login', to: 'user#login'
   get 'user/signup', to: 'user#signup'
   get 'user/home'
- root 'welcome#home'
+ root 'user#home'
  resources :article
   get 'welcome/home'
   get 'user/data'
