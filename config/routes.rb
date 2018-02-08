@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
+  resources :signins
+
   resources :logins
   get 'user/login', to: 'user#login'
   get 'user/signup', to: 'user#signup'
+  get 'user/json', to: 'user#json'
   get 'user/home'
- root 'user#home'
+
+ # root 'users#home'""
  resources :article
-  get 'welcome/home'
+  get 'welcome/nav', to: 'welcome#nav'
+
+
+  get 'welcome/contact'
+      get 'welcome/about'
+          # get 'welcome/nav'
   get 'user/data'
 
   get 'welcome/about'

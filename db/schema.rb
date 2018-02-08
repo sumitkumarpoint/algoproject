@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206113520) do
+ActiveRecord::Schema.define(version: 20180208113308) do
 
   create_table "forgots", force: true do |t|
     t.string   "email"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20180206113520) do
   create_table "logins", force: true do |t|
     t.string   "email"
     t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "los", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "signins", force: true do |t|
+    t.string   "email"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

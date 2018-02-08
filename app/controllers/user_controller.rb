@@ -10,6 +10,10 @@ class UserController < ApplicationController
   end
   def data
 
-    end
+  end
+  def json
+
+
+  end
 
 end

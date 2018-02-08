@@ -1,11 +1,20 @@
+<!DOCTYPE html>
 <html>
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=divice-width , initial-scale=1.0">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
 </head>
 <body>
+
+
+
+
+
+
+
 <style>
   p{
     font-family: Algerian;
@@ -17,33 +26,79 @@
   <p>Last Name is: <span id="ln"></span> </p>
   <p>Email is: <span id="ema"></span> </p>
   <p>Password is: <span id="pas"></span> </p>
+
+  <p id="demo"></p>
+
 </div>
+
+
+<%   aFile = File.new("demo.json", "r")
+     if aFile
+       content = aFile.sysread(20)
+     %> <%= content %>
+    <%
+     else
+
+       %> <%= "Unable to open file!"%> <%
+     end
+%>
+
+
+
+
+
+
+
 <script>
 
-   var str1= window.location.search;
-   var str =str1.replace("%40",'@');
-   var res = str.split("=");
-  var fn=  res['1'];
-  var fname=fn.split("&");
-   document.getElementById("fn").innerHTML =fname['0'];
 
 
-   var ln=  res['2'];
-   var l_name=ln.split("&");
-   document.getElementById("ln").innerHTML =l_name['0'];
 
-   var e=  res['3'];
-   var email=e.split("&");
-   document.getElementById("ema").innerHTML =email['0'];
 
-   var p=  res['4'];
-   var pass=p.split("&");
-   document.getElementById("pas").innerHTML =pass['0'];
+
+
+
+
+
+    var str1= window.location.search;
+    var str =str1.replace("%40",'@');
+    var res = str.split("=");
+    var fn=  res['1'];
+    var fname=fn.split("&");
+    document.getElementById("fn").innerHTML =fname['0'];
+
+
+    var ln=  res['2'];
+    var l_name=ln.split("&");
+    document.getElementById("ln").innerHTML =l_name['0'];
+
+    var e=  res['3'];
+    var email=e.split("&");
+    document.getElementById("ema").innerHTML =email['0'];
+
+    var p=  res['4'];
+    var pass=p.split("&");
+    document.getElementById("pas").innerHTML =pass['0'];
+ var d={
+     "firstname":fname['0'],
+     "lastname":l_name['0'],
+     "email":email['0'],
+     "password":pass['0'],
+ }
+var st=JSON.stringify(d);
+
+
+
+ var ob=JSON.parse(st);
+ for( x in ob){
+     document.getElementById('demo').innerHTML=st;
+ }
 
 
 
 
 
 </script>
+
 </body>
 </html>
