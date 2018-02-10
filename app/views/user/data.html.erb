@@ -32,16 +32,6 @@
 </div>
 
 
-<%   aFile = File.new("demo.json", "r")
-     if aFile
-       content = aFile.sysread(20)
-     %> <%= content %>
-    <%
-     else
-
-       %> <%= "Unable to open file!"%> <%
-     end
-%>
 
 
 
@@ -83,7 +73,7 @@
      "firstname":fname['0'],
      "lastname":l_name['0'],
      "email":email['0'],
-     "password":pass['0'],
+     "password":pass['0']
  }
 var st=JSON.stringify(d);
 
