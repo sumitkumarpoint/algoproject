@@ -1,18 +1,44 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=divice-width , initial-scale=1.0">
+
   <%= stylesheet_link_tag "style1.css" %>
   <%= javascript_include_tag "script1.js" %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
 <body>
+<script>
+
+    function loadDoc5() {
+
+        var email=document.getElementById('le').value;
+        var pass=document.getElementById("lp").value;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var d = this.responseText;
+                var ob = JSON.parse(d);
+                var em = ob.email;
+                var pas = ob.pass;
+               if(em==email && pas==pass){
+                   alert("you are loged in");
+               }
+               else{
+                   alert("wrong username or password");
+                   return false;
+               }
+            }
+        };
+        xhttp.open("GET", "data.json", true);
+        xhttp.send();
+    }
+
+</script>
 
 <div  style="margin: 50px" align="center" class="jumbotron">
   <table rows="9" cols="2 " cellspacing="10" >
-    <form onsubmit="return f1();">
+    <form onsubmit="return loadDoc5();">
       <tr><th style="font-family: cooper;font-size: 3em;"  class="text-center" colspan="2">Sign In</th></tr>
       <tr>
       <tr>
@@ -32,7 +58,7 @@
       <tr>
 
         <td colspan="2" style="text-align: center">
-          <input type="submit" value="Log in"  class=""/><br>
+          <input type="submit" onclick="f1();" value="Log in"  class=""/><br>
         </td>
       </tr>
       <tr>

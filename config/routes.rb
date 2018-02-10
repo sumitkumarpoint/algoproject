@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   resources :signins
 
   resources :logins
-  get 'user/login', to: 'user#login'
+ root  'user#login'
+  get 'user/login' => 'user#login'
   get 'user/signup', to: 'user#signup'
   get 'user/json', to: 'user#json'
   get 'user/home'
+  get  ':controller(/:action(/:id))'
 
  # root 'users#home'""
  resources :article

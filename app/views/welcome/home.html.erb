@@ -1,3 +1,7 @@
-
-
 <h1>this is home page</h1>
+
+<% File.open('login.rb', 'r') do |f1| %>
+    <% while line = f1.gets %>
+        <%=puts line %>
+    <%  end %>
+<%  end %>
